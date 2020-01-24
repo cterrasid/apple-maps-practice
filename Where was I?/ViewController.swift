@@ -32,7 +32,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         mapView.showsUserLocation = true
     }
 
-
+    @IBAction func addLocation(_ sender: Any) {
+        let coordinates = locationManager.location?.coordinate
+        
+        if let lat = coordinates?.latitude {
+            print("Latitude: \(String(lat))")
+        }
+        
+        if let long = coordinates?.longitude {
+            print("Longitude: \(String(long))")
+        }
+    }
+    
 }
 
 
