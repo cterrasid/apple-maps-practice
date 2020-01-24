@@ -14,12 +14,13 @@ struct StorageKeys {
 }
 
 class DataStore {
-    
+
     func GetDefaults () -> UserDefaults {
         return UserDefaults.standard
     }
     
     func StoreDataPoint(latitude: String, longitude: String) {
+        
         let def = GetDefaults()
         
         def.setValue(latitude, forKey: StorageKeys.storedLat)
@@ -28,5 +29,17 @@ class DataStore {
         def.synchronize()
         
         print("\(latitude) \(longitude)")
+        print(StorageKeys.storedLat)
+    }
+    
+    func GetLastLocation() -> VisitedPoint? {
+        let defaults = GetDefaults()
+        
+        if let lat = defaults.string(forKey: StorageKeys.storedLat) {
+            if let long = defaults.string(forKey: StorageKeys.storedLong) {
+                return VisitedPoint(lat: lat, long: long)
+            }
+        }
+        return nil
     }
 }

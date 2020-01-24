@@ -20,6 +20,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        UpdateSavedPin()
+    }
+    
+    func UpdateSavedPin() {
+        if let oldCoordinates = DataStore().GetLastLocation() {
+            
+            let annotationRemove = mapView.annotations.filter { $0 !== mapView.userLocation}
+            mapView.removeAnnotations(annotationRemove)
+            
+            let annotation = MKPointAnnotation()
+            annotation.coordinate.latitude = Double(oldCoordinates.latitude)!
+            annotation.coordinate.longitude = Double(oldCoordinates.longitude)!
+            
+            annotation.title = "I was here!"
+            annotation.subtitle = "Remember?"
+            mapView.addAnnotation(annotation)
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -40,6 +58,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 DataStore().StoreDataPoint(latitude: String(lat), longitude: String(long))
             }
         }
+        UpdateSavedPin()
     }
     
 }
