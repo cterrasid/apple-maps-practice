@@ -14,6 +14,7 @@
 		1048A7F423D89A590022F4D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1048A7F223D89A590022F4D7 /* LaunchScreen.storyboard */; };
 		1048A7FD23D89B7D0022F4D7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1048A7FC23D89B7D0022F4D7 /* MapKit.framework */; };
 		105943A723DAE308008804C0 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105943A623DAE308008804C0 /* DataModel.swift */; };
+		105943A923DAEAE1008804C0 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105943A823DAEAE1008804C0 /* DataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1048A7F523D89A590022F4D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1048A7FC23D89B7D0022F4D7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		105943A623DAE308008804C0 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		105943A823DAEAE1008804C0 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +64,9 @@
 			children = (
 				1048A7E923D89A580022F4D7 /* AppDelegate.swift */,
 				1048A7EB23D89A580022F4D7 /* ViewController.swift */,
-				1048A7ED23D89A580022F4D7 /* Main.storyboard */,
+				105943A823DAEAE1008804C0 /* DataStore.swift */,
 				105943A623DAE308008804C0 /* DataModel.swift */,
+				1048A7ED23D89A580022F4D7 /* Main.storyboard */,
 				1048A7F023D89A590022F4D7 /* Assets.xcassets */,
 				1048A7F223D89A590022F4D7 /* LaunchScreen.storyboard */,
 				1048A7F523D89A590022F4D7 /* Info.plist */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1048A7EC23D89A580022F4D7 /* ViewController.swift in Sources */,
+				105943A923DAEAE1008804C0 /* DataStore.swift in Sources */,
 				1048A7EA23D89A580022F4D7 /* AppDelegate.swift in Sources */,
 				105943A723DAE308008804C0 /* DataModel.swift in Sources */,
 			);
